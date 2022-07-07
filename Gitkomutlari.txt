@@ -1,0 +1,59 @@
+GİT KOMUTLARI
+================================================
+pwd -> etkin yolu verir
+
+ls -> dosya veya klasörleri adları ile listeler
+
+ll -> dosya veya klasörleri ayrıntılı listeler
+
+clear -> Ekranı temizler
+
+git config --list -> Ayarlar listesini gösterir
+
+alias -> takma ad tanımlar. Örnek: alias notepad="/c/program\ Files/Notepad++/notepad++.exe"
+
+start -> başlatır. Örnek : start notepad++ , start notepad++ deneme.txt , notepad
+
+git init -> Bir klasörü git reposu yapmak için kullanılır. Gizli bir .git klasörü oluşturur.
+
+git Status -> Projede bir değişiklik olduğunda bu değişiklikleri gösterir. Bu klasör içerisindeki dosyaların repo’ya aktarılıp aktarılmadığını görebiliriz. Kırmızı ile belirtilen tüm dosyalar eklenmemiştir. Burada dikkat edilmesi gereken nokta .gitignore dosyasıdır eğer sisteminizde .gitignore dosyası var ise burada yer alan dosyalarınız her zaman repoya eklenmez. Bunu bir güvenlik olarak görebiliriz örneğin laravel’de env dosyasında veritabanı vb. şifreler yer aldığı için git reposuna dahil edilmemesi gerektiği .gitignore dosyasında belirtilmiştir. Böyle olunca kullanıcılara .env dosyası paylaşılmaz.
+
+touch README.md -> bir dosya oluşturur.
+
+echo "Bu benim ilk depom" >> README.md -> Dosyanın içine yazı eklemek için kullanılır.
+
+git commit -m "bu benim ilk commitim" README.md -> Daha sonra izlemeye aldığımız dosyayı yerel makinamızda "commit" liyelim
+
+git commit -m "Kurulum Yapıldı" -> Bu kısımda 'git add *' ile repomuza eklediğimiz dosya ve klasörlere bir sürüm tarzı bir sistem ekleyerek bir açıklama ile repo’yu ayırıyoruz. Bu ayarlamada ilk işlem sırasında bazı bilgiler isteyebilir bunları 'git config user.email "mail@adresiniz.com"' ve 'git config user.name "Ad Soyad"' girmeniz gerekmektedir. Bu işlem yapıldığında bir hata almaz iseniz git reposu belirlenmiş olacaktır.
+
+git push -u origin master -> Konumdaki herşeyi Github’a gönderir.
+
+git add dosya.php -> Sadece bir klasör veya dosya’yı repoya ekler izlemeye alır.
+
+git add * -> Burada * (yıldız) yerine . (nokta)‘da kullanabiliriz. Tüm dosya ve klasörleri Repo’ya ekler. Bu kod bazı windows sistemlerinde çalışmama durumları olabilmektedir. Bu gibi durumlarda 'git config core.autocrlf true' bu kodu çalıştırıp daha sonra 'git add *' çalıştırmalıyız.
+
+git log -> Bu repo’da daha önce commit işlemi yapılmış mı bunun kontrolünü sağlıyoruz.
+
+git reset –hard * -> Bu kod ile ilgili repo’ya geri dönüşümüze imkan sunacaktır, git log ile kontrol ettiğimiz  commit numarasını * yazan kısma yazdığımızda ilgili sürüme tek tıklama ile geri dönüş yapabiliriz.
+
+git branch v1.1 -> Yeni bir branch oluşturduk.
+
+git branch -> Mevcut branch’leri kontrol ediyoruz. Yanında * olan branch kullandığınız branch’tir.
+
+git checkout v1.1 -> Artık v1.1 branch’imizde geliştirme yapıyoruz ve burada yaptığımız branch’ler v.1′ hiç bir şekilde bozmayacaktır. En temel anlamıyla düşünürsek v1 klasörünü kopyalayıp yapıştırdığımızda adını v1.1 yaparak v1.1 üzerinde düzenleme yapma gibi düşünebiliriz.
+
+git merge v1.1 -> Artık v1.1 geliştirmesini tamamlayıp tüm sistemi master branch’inde toplamak istediğimizde bu kodu kullanarak v1.1 branch’ini master branch’ine aktarıyoruz.
+
+git branch -D v1.1 -> v1.1 branch’ini siliyoruz.
+
+git remote add origin https://github.com/yusufkahramaner/repoismi.git -> Mevcut local sistemimizdeki git’i github’a aktarır. 
+
+git push origin master -> Master kısmı branch adımız. Bu işlem sırasında size kullanıcı adı ve şifre sorarak github senkronizasyonunu yapar.
+
+git clone https://github.com/yusufkahramaner/repoismi.git -> Github reposunu local’e çekmek için bu kodu kullanabiliriz.
+
+git remote remove origin -> Git veya bitbucket ile bağlantıyı koparır.
+
+git clone uzak_sunucu_adresi -> Uzaktaki Projeyi bilgisayarımıza çekmek için kullanılır.
+
+git push -u origin master -> github.com a göndermek için kullanılır
